@@ -1,7 +1,16 @@
 #include <stdio.h>
+#define N 9
+
+void print_matrix(int matrix[][N]) {
+	for (int i=0; i<N; i++) {
+		for (int j=0; j<N; j++) {
+			printf("%d\t", matrix[i][j]);
+		}
+		printf("\n");
+	}
+}
 
 int main () {
-	int N = 9;
 	int a[N][N];
 	int top = 0, bottom = N - 1, left = 0, right = N - 1;
 	
@@ -38,11 +47,6 @@ int main () {
 		bottom--;
 	}
 	
-	for (int i=0; i<N; i++) {
-		for (int j=0; j<N; j++) {
-			printf("%d\t", a[i][j]);
-		}
-		printf("\n");
-	}
+	print_matrix(a);
 	return 0;
 }
